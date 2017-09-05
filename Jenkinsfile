@@ -11,6 +11,7 @@ node {
             sh 'ls /app'
             sh 'grails --version'
             sh 'grails test-app'
+            sh 'grails war'
         }
     }
 
