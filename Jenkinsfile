@@ -4,8 +4,13 @@ node {
     checkout scm
 
     stage('Test') {
-        sh 'grails test-app'
+        docker.image('proactivehk/grails-docker:3.2.7').withRun { c ->
+            sh 'grails --version'
+        }
     }
+
+
+
 
     // stage('Build image') {
     //     sh "git rev-parse HEAD > .git/commit-id"
