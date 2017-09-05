@@ -4,7 +4,7 @@ node {
     checkout scm
 
     stage('Test') {
-        docker.image('proactivehk/grails-docker:3.2.7').withRun { c ->
+        docker.image('proactivehk/grails-docker:3.2.7').inside { c ->
             sh 'grails --version'
         }
     }
