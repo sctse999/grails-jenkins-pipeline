@@ -4,7 +4,9 @@ node {
     checkout scm
 
     stage('Test') {
-        docker.image('proactivehk/grails-docker:3.2.7').inside('-v $(pwd)/:/app') { c ->
+        def pwd = pwd()
+
+        docker.image('proactivehk/grails-docker:3.2.7').inside("-v $pwd/:/app") { c ->
             sh 'ls /app'
             sh 'grails --version'
         }
