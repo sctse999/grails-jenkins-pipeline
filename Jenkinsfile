@@ -10,9 +10,13 @@ node {
         docker.image('proactivehk/grails-docker:3.2.7').inside("-v $pwd:/app") { c ->
             sh 'ls /app'
             sh 'grails --version'
+            sh 'grails clean'
             sh 'grails test-app'
             sh 'grails war'
         }
+
+
+        app = docker.build "proactivehk/grails-jenkins-pipeline:master"
     }
 
 
