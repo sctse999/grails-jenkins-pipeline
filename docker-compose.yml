@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   web:
-    image: grails-docker:3.2.7
+    image: proactivehk/grails:3.2.7
     volumes:
      - .:/app
-    tty: true
+
