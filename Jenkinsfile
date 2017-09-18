@@ -8,7 +8,7 @@ node {
     String imageName = "grails-jenkins-pipeline";
     String serviceName = "gjp"
 
-    Stage('Checkout') {
+    stage('Checkout') {
         checkout scm
         sh "git rev-parse HEAD > .git/commit-id"
         commit_id = readFile('.git/commit-id').trim().take(7)
@@ -39,10 +39,9 @@ node {
         }
     }
 
-
-//    stage('Deploy') {
-//        sh "docker service update --image proactivehk/${imageName}:${tagName} ${serviceName}"
-//    }
+    stage('Deploy') {
+        sh "docker service update --image proactivehk/${imageName}:${tagName} ${serviceName}"
+    }
 
 
 }
