@@ -6,7 +6,7 @@ node {
     String env = "staging";
     String tagName;
     String imageName = "grails-jenkins-pipeline";
-    String serviceName = "gjp"
+    String serviceName = "gjp2_app"
 
     stage('Checkout') {
         checkout scm
