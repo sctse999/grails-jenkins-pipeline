@@ -3,6 +3,8 @@ node {
     def pwd = pwd()
     String commit_id;
 
+    cleanWs()
+    
     String env = "staging";
     String tagName;
     String imageName = "grails-jenkins-pipeline";
