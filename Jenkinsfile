@@ -4,7 +4,7 @@ node {
     String commit_id;
 
     cleanWs()
-    
+
     String env = "staging";
     String tagName;
     String imageName = "grails-jenkins-pipeline";
@@ -18,9 +18,10 @@ node {
     }
 
     stage('Test app') {
+        sh "./gradlew --stop"
+
         docker.image('proactivehk/grails-docker:3.2.7').inside("-v $pwd:/app") { c ->
             sh 'grails test-app'
-
         }
     }
 
