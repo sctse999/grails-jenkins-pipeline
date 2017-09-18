@@ -1,7 +1,7 @@
-version: '3.3'
+version: '3.0'
 services:
   web:
-    image: proactivehk/grails:3.2.7
-    volumes:
-     - .:/app
+    image: proactivehk/grails-jenkins-pipeline:latest
+
+
 

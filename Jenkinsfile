@@ -38,13 +38,11 @@ node {
     stage('Publish image') {
         docker.withRegistry('https://registry.hub.docker.com', 'docker_hub') {
             app.push "${tagName}"
-            app.push "latest-${env}"
+            app.push "latest"
         }
     }
 
     stage('Deploy') {
         sh "docker service update --image proactivehk/${imageName}:${tagName} ${serviceName}"
     }
-
-
 }
