@@ -54,7 +54,7 @@
 
     <div id="content" role="main">
         <section class="row colset-2-its">
-            <h1>Welcome to Docker Meetup Group v1 1949</h1>
+            <h1>Welcome to Docker Meetup Group v1 2015</h1>
             <h2>Commit id: ${grails.util.Holders.config.commitid}</h2>
 
             <p>

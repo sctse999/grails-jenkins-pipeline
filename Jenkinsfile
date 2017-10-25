@@ -24,7 +24,7 @@ node {
     }
 
     stage('Build app') {
-        docker.image('proactivehk/grails-docker:3.2.7').inside("-v $pwd:/app") { c ->
+        docker.image('proactivehk/grails-docker:3.2.8').inside("-v $pwd:/app") { c ->
             sh 'grails war'
         }
     }
