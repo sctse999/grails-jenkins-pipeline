@@ -43,5 +43,7 @@ node {
 
     stage('Deploy') {
         sh "docker service update --image proactivehk/${imageName}:${tagName} ${serviceName}"
+
+        emailext attachLog: true, compressLog: true, to: 'jonathan@tsez.net'
     }
 }
