@@ -1,7 +1,15 @@
 version: '3.0'
 services:
   web:
+    image: nginx
+    ports:
+        - "82:82"
+    volumes:
+        - ./gjp2.conf:/etc/nginx/conf.d/gjp2.conf
+    environment:
+        - TZ=Asia/Hong_Kong
+  app:
     image: proactivehk/grails-jenkins-pipeline:latest
-
-
-
+    environment:
+      - TZ=Asia/Hong_Kong
+      - CATALINA_OPTS=-Xmx2048m -Xms1024m
