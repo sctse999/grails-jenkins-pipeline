@@ -30,7 +30,8 @@ node {
     }
 
     stage('Build image') {
-        app = docker.build "proactivehk/${imageName}:${tagName}"
+        sh "docker build --build-arg COMMIT_ID=${commit_id} -t proactivehk/${imageName}:${tagName} ."
+        app = docker.image("proactivehk/${imageName}:${tagName}");
     }
 
     stage('Publish image') {

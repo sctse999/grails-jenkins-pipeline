@@ -1,3 +1,4 @@
+<%@ page import="grails.util.Holders" %>
 <!doctype html>
 <html>
 <head>
@@ -54,6 +55,7 @@
     <div id="content" role="main">
         <section class="row colset-2-its">
             <h1>Welcome to Docker Meetup Group v2</h1>
+            <h2>Commit id: ${grails.util.Holders.config.commitid}</h2>
 
             <p>
                 Congratulations, you have successfully started your first Grails application! At the moment
